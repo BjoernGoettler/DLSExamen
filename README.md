@@ -46,6 +46,6 @@ Describe the term availability. How can you improve availability, and how could 
 
 What is DevOps and how do you implement it in an organisation? Relate to architectural principles.
 
-### 12: Green software
+### [12: Green software](green_software/GREEN_SOFTWARE.md)
 
 How can you apply a green mindset to a software development process? Consider everything from design over implementation to delivery. Why is this especially important for large systems?
