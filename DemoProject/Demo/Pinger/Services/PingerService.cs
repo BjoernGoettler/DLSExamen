@@ -30,12 +30,19 @@ public class PingerService
     }
     public async Task<SampleResponse> Ping()
     {
-        using(MonitorService.Log.Here().BeginTimedOperation("Measure Ponger service"))
+        using (var activity = MonitorService.ActivitySource.StartActivity())
         {
-            var client = new HttpClient();
-            MonitorService.Log.Information("Pinging the ponger");
-            var response = await client.GetFromJsonAsync<SampleResponse>("http://pongservice:8080/ping");
-            return response;
+            MonitorService.Log.Here().Error("Ping requested");
+            using(MonitorService.Log.Here().BeginTimedOperation("Measure Ponger service"))
+            {
+                
+                var client = new HttpClient();
+                MonitorService.Log.Information("Pinging the ponger");
+                var response = await client.GetFromJsonAsync<SampleResponse>("http://pongservice:8080/ping");
+                return response;
+            }
+            
         }
+        
     }
 }

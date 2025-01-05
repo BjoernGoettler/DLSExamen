@@ -1,5 +1,7 @@
 using Microsoft.Extensions.Logging.Abstractions;
 using Monitoring;
+using Serilog;
+
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
@@ -19,3 +21,4 @@ app.UseSwaggerUI(options =>
 MonitorService.Log.Information( "About to run Pinger");
 app.MapControllers();
 app.Run();
+Log.CloseAndFlush();
