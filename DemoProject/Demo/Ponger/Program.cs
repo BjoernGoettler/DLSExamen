@@ -1,4 +1,12 @@
+using EasyNetQ;
+using Ponger.Services;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddSingleton<IBus>(
+    provider => RabbitHutch.CreateBus("host=rabbitmq;username=mquser;password=verysecret"));
+
+builder.Services.AddHostedService<PongerServiceHosted>();
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi

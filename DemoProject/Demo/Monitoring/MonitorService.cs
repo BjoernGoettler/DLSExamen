@@ -12,7 +12,7 @@ public static class MonitorService
     // Here we setup OpenTelemetry in the monitorservice
     public static readonly string ServiceName = Assembly.GetCallingAssembly().GetName().Name ?? "Unknown";
     public static TracerProvider TracerProvider;
-    public static ActivitySource ActivitySource = new(ServiceName);
+    public static ActivitySource ActivitySource = new ActivitySource(ServiceName);
     
     // Here we make the logger use Serilog
     public static ILogger Log
@@ -26,6 +26,7 @@ public static class MonitorService
             .AddZipkinExporter(o => o.Endpoint = new Uri("http://zipkin:9411/api/v2/spans"))
             .AddSource(ActivitySource.Name)
             .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService(ServiceName))
+            .SetSampler(new AlwaysOnSampler())
             .Build();
         
         // Serilog

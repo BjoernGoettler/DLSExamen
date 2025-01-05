@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Monitoring;
-using Pinger.Models;
 using Pinger.Services;
+using SharedMessages;
 
 namespace Pinger.Controllers;
 
