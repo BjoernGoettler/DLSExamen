@@ -34,6 +34,8 @@ services:
   pingservice:
     build:
       dockerfile: Pinger/Dockerfile
+    ports:
+      - "8080:8080"
     
 volumes:
   seq_data:
