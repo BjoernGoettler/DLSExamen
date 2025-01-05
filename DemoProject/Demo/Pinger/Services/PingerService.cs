@@ -28,4 +28,14 @@ public class PingerService
             Success = true
         });
     }
+    public async Task<SampleResponse> Ping()
+    {
+        using(MonitorService.Log.Here().BeginTimedOperation("Measure Ponger service"))
+        {
+            var client = new HttpClient();
+            MonitorService.Log.Information("Pinging the ponger");
+            var response = await client.GetFromJsonAsync<SampleResponse>("http://pongservice:8080/ping");
+            return response;
+        }
+    }
 }

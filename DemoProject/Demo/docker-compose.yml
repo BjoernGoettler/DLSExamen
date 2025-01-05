@@ -36,7 +36,11 @@ services:
       dockerfile: Pinger/Dockerfile
     ports:
       - "8080:8080"
-    
+    depends_on:
+      - seq
+      - zipkin
+      - featurehub
+      - pongservice
 volumes:
   seq_data:
   rabbitmq_data:

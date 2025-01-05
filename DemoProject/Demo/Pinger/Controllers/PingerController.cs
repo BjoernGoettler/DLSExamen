@@ -31,4 +31,12 @@ public class PingerController: ControllerBase
         MonitorService.Log.Information("Stopwatch requested");
         return await _service.StopWatch(); 
     }
+
+    [HttpGet]
+    [Route("/ping")]
+    public async Task<SampleResponse> Ping()
+    {
+        MonitorService.Log.Information("Pinging Ponger");
+        return await _service.Ping();
+    }
 }
