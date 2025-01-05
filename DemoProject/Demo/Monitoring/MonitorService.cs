@@ -23,7 +23,7 @@ public static class MonitorService
         // OpenTelemetry
         TracerProvider = Sdk.CreateTracerProviderBuilder()
             .AddConsoleExporter()
-            .AddZipkinExporter(o => o.Endpoint = new Uri("http://localhost:9411/api/v2/spans"))
+            .AddZipkinExporter(o => o.Endpoint = new Uri("http://zipkin:9411/api/v2/spans"))
             .AddSource(ActivitySource.Name)
             .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService(ServiceName))
             .Build();
@@ -32,7 +32,7 @@ public static class MonitorService
         Serilog.Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Information()
             .WriteTo.Console()
-            .WriteTo.Seq("http://localhost:5341")
+            .WriteTo.Seq("http://seq:5341")
             .CreateLogger();
     }
 }

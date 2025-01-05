@@ -28,6 +28,19 @@ services:
       - "8085:8085"
     volumes:
       - featurehub_data:/db
+  pongservice:
+    build:
+      dockerfile: Ponger/Dockerfile
+  pingservice:
+    build:
+      dockerfile: Pinger/Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - seq
+      - zipkin
+      - featurehub
+      - pongservice
 volumes:
   seq_data:
   rabbitmq_data:
