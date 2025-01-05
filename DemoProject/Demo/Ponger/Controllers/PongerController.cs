@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Monitoring;
-using Ponger.Models;
 using Ponger.Services;
+using SharedMessages;
 
 namespace Ponger.Controllers;
 
