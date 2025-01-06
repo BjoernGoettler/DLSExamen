@@ -8,7 +8,7 @@
 Define the concept of principles for large systems, present a number of principles for large systems, and explain potential benefits and pitfalls.
 
 ### 2: Optimisation
-
+[page](pages/2_OPTIMISATION.md)
 Imagine you have a component running to slowly. Describe different solutions to consider that will make the system run faster. Include architectural principles.
 
 ### 3: Design to be monitored
