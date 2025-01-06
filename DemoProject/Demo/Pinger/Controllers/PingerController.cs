@@ -39,4 +39,12 @@ public class PingerController: ControllerBase
         MonitorService.Log.Information("Pinging Ponger");
         return await _service.Ping();
     }
+    
+    [HttpGet]
+    [Route("/consumepower")]
+    public async Task<SampleResponse> ConsumePower()
+    {
+        MonitorService.Log.Information("Considering some poser ");
+        return await _service.ConsumePower();
+    }
 }
