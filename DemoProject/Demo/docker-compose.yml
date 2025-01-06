@@ -31,6 +31,8 @@ services:
   pongservice:
     build:
       dockerfile: Ponger/Dockerfile
+    deploy:
+      replicas: 2
   pingservice:
     build:
       dockerfile: Pinger/Dockerfile
