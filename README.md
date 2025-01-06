@@ -21,6 +21,7 @@ Describe possibilities and problems in X-, Y-, and Z-scalability and give exampl
 
 ### 5: Asynchronous design
 
+[page](pages/5_ASYNCHRONOUS_DESIGN.md)
 Systems based on synchronous design tend to be less scalable than systems based on asynchronous design. Argue for that and outline pros and cons for asynchronous design vs. synchronous design.
 
 ### 6: Tools for large systems
@@ -40,6 +41,7 @@ What do we mean by a specification of a software component? Describe several way
 
 ### 9: Feature flags
 [page](pages/9_FEATURE_FLAGS.md)
+
 What are different types of feature flags used for, and what are the pros and cons? Describe how they relate to DevOps and scalability principles.
 
 ### 10: Availability
