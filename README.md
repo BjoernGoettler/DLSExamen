@@ -39,7 +39,7 @@ What do we mean by a specification of a software component? Describe several way
 
 
 ### 9: Feature flags
-
+[page](pages/9_FEATURE_FLAGS.md)
 What are different types of feature flags used for, and what are the pros and cons? Describe how they relate to DevOps and scalability principles.
 
 ### 10: Availability
@@ -51,5 +51,5 @@ Describe the term availability. How can you improve availability, and how could 
 What is DevOps and how do you implement it in an organisation? Relate to architectural principles.
 
 ### [12: Green software](green_software/GREEN_SOFTWARE.md)
-
+[page](pages/12_GREEN_SOFTWARE.md)
 How can you apply a green mindset to a software development process? Consider everything from design over implementation to delivery. Why is this especially important for large systems?
