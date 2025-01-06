@@ -45,6 +45,14 @@ public void main()
 }
 ```
 
+### Loglevels
+- Verbose
+- Debug
+- Information
+- Warning
+- Error
+- Fatal
+
 ### Tools for monitoring
 - Seq is a centralizes loggin service
 - Zipkin can keep track of traces. Jaeger is another example
