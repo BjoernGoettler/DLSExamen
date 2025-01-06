@@ -51,6 +51,8 @@ What are different types of feature flags used for, and what are the pros and co
 
 ### 10: Availability
 
+[page](pages/10_AVAILABILITY.md)
+
 Describe the term availability. How can you improve availability, and how could you potentially harm availability? Relate to architectural principles and the scale cube.
 
 ### 11: DevOps
