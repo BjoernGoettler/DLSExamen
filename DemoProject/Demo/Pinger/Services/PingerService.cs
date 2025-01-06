@@ -2,6 +2,7 @@ using System.Diagnostics;
 using EasyNetQ;
 using EasyNetQ.DI;
 using EasyNetQ.Serialization.NewtonsoftJson;
+using FeatureHubSDK;
 using Monitoring;
 using OpenTelemetry;
 using OpenTelemetry.Context.Propagation;
@@ -9,14 +10,29 @@ using Polly;
 using Polly.CircuitBreaker;
 using Serilog;
 using SharedMessages;
-
 namespace Pinger.Services;
 
 public class PingerService
 {
     private readonly ResiliencePipeline<SampleResponse> _policy;
+    private EdgeFeatureHubConfig _featureHubConfig;
+    private IClientContext fh;
+    
+     
     public PingerService()
     {
+        FeatureLogging.DebugLogger += (sender, s)
+            => MonitorService.Log.Here().Debug("Feature debugger " + s);
+        FeatureLogging.TraceLogger += (sender, s)
+            => MonitorService.Log.Here().Information("Feature tracer " + s);
+        FeatureLogging.InfoLogger += (sender, s)
+            => MonitorService.Log.Here().Information("Feature info " + s);
+        FeatureLogging.ErrorLogger += (sender, s)
+            => MonitorService.Log.Here().Error("Feature error " + s);
+        _featureHubConfig = new EdgeFeatureHubConfig("http://featurehub:8085", "2b1728cf-42b5-45c0-a947-2d8120d441ff/K5q2tfawPkZ1JMdYSku1UGlUb10rD0w01l4PHv3J");
+        
+        
+        
         _policy = new ResiliencePipelineBuilder<SampleResponse>()
             .AddTimeout(TimeSpan.FromSeconds(30))
             .AddCircuitBreaker(new CircuitBreakerStrategyOptions<SampleResponse>
@@ -61,6 +77,36 @@ public class PingerService
             Message = "We took a nap",
             Success = true
         });
+    }
+
+    public async Task<SampleResponse> ConsumePower()
+    {
+        MonitorService.Log.Information("Checking if we are allowed to consume power");
+        fh = await _featureHubConfig.NewContext().Build();
+        var isPowerPriceNegative = fh["negativepowerprice"].IsEnabled;
+        MonitorService.Log.Information($"FeatureHub context built {fh["negativepowerprice"]}");
+        MonitorService.Log.Here().Information("Consuming power if allowed");
+        SampleResponse PowerResponse;
+        if (isPowerPriceNegative)
+        {
+            MonitorService.Log.Here().Error("We are allowed to consume power");
+            PowerResponse = new SampleResponse
+            {
+                Message = "We are consuming power",
+                Success = true
+            };
+        }
+        else
+        {
+            MonitorService.Log.Here().Error("We are not allowed to consume power");
+            PowerResponse = new SampleResponse
+            {
+                Message = "We are not consuming power",
+                Success = true
+            };
+            
+        }
+        return await Task.FromResult(PowerResponse);
     }
     public async Task<SampleResponse> Ping()
     {
