@@ -31,8 +31,11 @@ You may choose a tool that can be used in the construction or management of larg
 What is the purpose and benefits of fault isolation? How can you design your systems to be fault isolative?
 
 ### 8: Specifications and outsourcing
+[page](pages/8_SPECIFICATIONS_AND_OUTSOURCING.md)
 
 What do we mean by a specification of a software component? Describe several ways to specify a software component and how to use it for outsourcing.
+
+
 
 ### 9: Feature flags
 
