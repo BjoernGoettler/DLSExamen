@@ -33,6 +33,8 @@ You may choose a tool that can be used in the construction or management of larg
 
 ### 7: Fault-isolative architectures
 
+[page](pages/7_FAULTISOLATIVE_ARCHITECTURE.md)
+
 What is the purpose and benefits of fault isolation? How can you design your systems to be fault isolative?
 
 ### 8: Specifications and outsourcing
