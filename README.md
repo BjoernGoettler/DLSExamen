@@ -52,4 +52,5 @@ What is DevOps and how do you implement it in an organisation? Relate to archite
 
 ### [12: Green software](green_software/GREEN_SOFTWARE.md)
 [page](pages/12_GREEN_SOFTWARE.md)
+
 How can you apply a green mindset to a software development process? Consider everything from design over implementation to delivery. Why is this especially important for large systems?
