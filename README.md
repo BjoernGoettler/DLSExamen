@@ -16,7 +16,7 @@ Imagine you have a component running to slowly. Describe different solutions to 
 Outline different ways/types of monitoring and why they are important. Sketch and demonstrate an approach to implement the principle.
 
 ### 4: Scalability cube
-
+[page](pages/4_SCALABILITY_CUBE.md)
 Describe possibilities and problems in X-, Y-, and Z-scalability and give examples of their use.
 
 ### 5: Asynchronous design
