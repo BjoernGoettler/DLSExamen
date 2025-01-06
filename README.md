@@ -57,6 +57,8 @@ Describe the term availability. How can you improve availability, and how could 
 
 ### 11: DevOps
 
+[page](pages/11_DEVOPS.md)
+
 What is DevOps and how do you implement it in an organisation? Relate to architectural principles.
 
 ### [12: Green software](green_software/GREEN_SOFTWARE.md)
