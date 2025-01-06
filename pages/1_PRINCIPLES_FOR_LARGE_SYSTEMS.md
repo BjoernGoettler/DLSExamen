@@ -19,3 +19,6 @@
 - Lack of planning
 - They didn't need it anymore (POLSAG)
 - many more
+
+
+![Scalability principles](../images/scalability_principles.png)
