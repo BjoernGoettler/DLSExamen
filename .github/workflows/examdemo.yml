@@ -1,0 +1,19 @@
+name: Exam demo of Github action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  say_hello_with_datetime:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Greet
+        run: |
+          echo "Hello"
+          echo "The current time and date is: $(date)"
+      - name: Demo
+        run: |
+          echo "This step could run tests ot deployed Docker containers"
