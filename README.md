@@ -11,7 +11,7 @@ Define the concept of principles for large systems, present a number of principl
 Imagine you have a component running to slowly. Describe different solutions to consider that will make the system run faster. Include architectural principles.
 
 ### 3: Design to be monitored
-
+[page](pages/3_DESIGN_TO_BE_MONITORED.md)
 Outline different ways/types of monitoring and why they are important. Sketch and demonstrate an approach to implement the principle.
 
 ### 4: Scalability cube
