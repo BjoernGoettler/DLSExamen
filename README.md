@@ -29,6 +29,8 @@ Systems based on synchronous design tend to be less scalable than systems based 
 
 ### 6: Tools for large systems
 
+[page](pages/6_TOOLS_FOR_LARGE_SYSTEMS.md)
+
 You may choose a tool that can be used in the construction or management of large systems. Describe how it's used, pros and cons, and in what sense it will support scalability. Pick a tool not used in class.
 
 ### 7: Fault-isolative architectures

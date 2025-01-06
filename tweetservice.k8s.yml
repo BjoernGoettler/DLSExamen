@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tweetservice
+  namespace: default
+  labels:
+    app: tweetservice
+spec:
+  containers:
+    - name: tweetservice
+      image: larsvegascph/tweetservice
+      imagePullPolicy: Never
