@@ -1,6 +1,28 @@
 # DevOps
 
-### Challenges mitigated
+## Definition
+
+There are multiple. Examples:
+
+### CAMS
+- Culture
+- Automation
+- Measurement
+    - Time to market
+    - Number of incidents
+- Sharing // Removed in CALMR because it's culture
+    - IFUT
+    - Stand/Retro
+
+CALMS adds LEAN
+- Lean
+    - Let's work as efficiently as possible
+CALMR adds Recovery
+- Recovery
+
+## Challenges
+
+### Mitigated challenges
 
 - Time to market
 - Design for rollback
