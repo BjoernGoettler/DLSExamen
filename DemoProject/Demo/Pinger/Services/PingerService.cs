@@ -144,9 +144,9 @@ public class PingerService
                     result = await Task.FromResult(
                         new SampleResponse
                         {
-                            Message = "Ponger is not responding",
+                            Message = "Here is your pong!",
                             Success = false,
-                            Error = "Ponger is not responding"
+                            Error = "This is a synthetic Pong"
 
                         }
                     );
